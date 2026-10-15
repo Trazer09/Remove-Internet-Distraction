@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Remove Internet Distraction — Dashboard
+  </title>
+  <link href="dashboard.css" rel="stylesheet"/>
+ </head>
+ <body data-theme="light">
+  <div class="app-shell">
+   <aside class="sidebar">
+    <a class="side-brand" href="popup.html">
+     <img alt="" src="icons/snowflake.svg"/>
+     <span>
+      Remove Internet Distraction
+     </span>
+    </a>
+    <nav aria-label="Dashboard sections" class="side-nav">
+     <a class="nav-link active" data-page="dashboard" href="dashboard.html?tab=dashboard">
+      <span class="nav-icon">
+       ▦
+      </span>
+      Dashboard
+     </a>
+     <a class="nav-link" data-page="statistics" href="dashboard.html?tab=statistics">
+      <span class="nav-icon">
+       ◷
+      </span>
+      Website Statistics
+     </a>
+     <a class="nav-link" data-page="whitelist" href="dashboard.html?tab=whitelist">
+      <span class="nav-icon">
+       ◇
+      </span>
+      Whitelist
+     </a>
+     <a class="nav-link" data-page="limits" href="dashboard.html?tab=limits">
+      <span class="nav-icon">
+       ⏱
+      </span>
+      Limits &amp; schedules
+     </a>
+     <a class="nav-link" data-page="notifications" href="dashboard.html?tab=notifications">
+      <span class="nav-icon">
+       ♧
+      </span>
+      Notifications
+     </a>
+     <a class="nav-link" data-page="settings" href="dashboard.html?tab=settings">
+      <span class="nav-icon">
+       ⚙
+      </span>
+      Settings
+     </a>
+    </nav>
+    <div class="sidebar-foot">
+     Your activity stays in this browser.
+    </div>
+   </aside>
+   <div class="workspace">
+    <header class="top">
+     <div class="top-title">
+      <span class="eyebrow">
+       YOUR FOCUS OVERVIEW
+      </span>
+      <h1>
+       Dashboard
+      </h1>
+     </div>
+     <div class="top-actions">
+      <button class="button secondary" id="theme">
+       ☾ Dark mode
+      </button>
+      <button class="button secondary" id="back">
+       ← Extension
+      </button>
+     </div>
+    </header>
+    <main id="main-content">
+     <section class="intro" data-page="dashboard" id="overview">
+      <div>
+       <h2>
+        Overview
+       </h2>
+       <p class="muted">
+        Your tracked time and website blocking at a glance.
+       </p>
+      </div>
+      <button class="button" id="refresh">
+       ↻ Refresh data
+      </button>
+     </section>
+     <section class="stats-grid" data-page="dashboard">
+      <article class="stat">
+       <span>
+        Today
+       </span>
+       <strong id="today-total">
+        0s
+       </strong>
+      </article>
+      <article class="stat">
+       <span>
+        All-time tracked
+       </span>
+       <strong id="all-total">
+        0s
+       </strong>
+      </article>
+      <article class="stat">
+       <span>
+        Websites tracked
+       </span>
+       <strong id="site-count">
+        0
+       </strong>
+      </article>
+      <article class="stat">
+       <span>
+        Blocked attempts today
+       </span>
+       <strong id="blocked-count">
+        0
+       </strong>
+      </article>
+     </section>
+     <section class="panel" data-page="dashboard" id="overview-blocking-activity">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Blocking activity
+        </h2>
+        <p class="muted">
+         Website blocking redirects recorded today.
+        </p>
+       </div>
+       <a class="button secondary" href="dashboard.html?tab=limits">
+        Manage rules
+       </a>
+      </div>
+      <div class="blocked-activity" id="blocked-activity-overview">
+      </div>
+     </section>
+     <section class="panel" data-page="statistics" id="website-statistics">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Website Statistics
+        </h2>
+        <p class="muted">
+         Browse every recorded website or group lower-ranked sites as Others.
+        </p>
+       </div>
+      </div>
+      <div class="usage-filters">
+       <label>
+        Period
+        <select id="chart-period">
+         <option value="week">
+          This week
+         </option>
+         <option value="today">
+          Today
+         </option>
+         <option value="7">
+          Last 7 days
+         </option>
+         <option value="30">
+          Last 30 days
+         </option>
+         <option value="custom">
+          Custom range
+         </option>
+        </select>
+       </label>
+       <label>
+        From
+        <input id="chart-from" type="date"/>
+       </label>
+       <label>
+        To
+        <input id="chart-to" type="date"/>
+       </label>
+       <label>
+        Websites
+        <select id="chart-top">
+         <option value="5">
+          Top 5
+         </option>
+         <option value="10">
+          Top 10
+         </option>
+         <option value="20">
+          Top 20
+         </option>
+         <option value="all">
+          All websites
+         </option>
+        </select>
+       </label>
+       <label>
+        Domain
+        <select id="chart-domain">
+         <option value="all">
+          From all domains
+         </option>
+        </select>
+       </label>
+       <button class="button" id="chart-refresh" type="button">
+        ↻ Refresh
+       </button>
+      </div>
+      <p class="muted stats-summary" id="chart-range-summary">
+      </p>
+      <div aria-label="Daily stacked website usage chart" class="usage-chart" id="usage-chart" role="img">
+      </div>
+      <div class="chart-legend" id="chart-legend">
+      </div>
+      <label class="checkline other-toggle">
+       <input checked="" id="show-others" type="checkbox"/>
+       Show all other websites
+      </label>
+      <div class="stats-list-controls">
+       <div class="stats-controls">
+        <label class="select-label">
+         Show
+         <select aria-label="Number of websites to show" id="stat-limit">
+          <option value="10">
+           Top 10
+          </option>
+          <option value="20">
+           Top 20
+          </option>
+          <option value="50">
+           Top 50
+          </option>
+          <option value="100">
+           Top 100
+          </option>
+          <option value="all">
+           All websites
+          </option>
+         </select>
+        </label>
+        <label class="select-label">
+         Sort
+         <select aria-label="Sort website statistics" id="stat-sort">
+          <option value="time">
+           Usage time
+          </option>
+          <option value="sessions">
+           Sessions
+          </option>
+          <option value="name">
+           Website name
+          </option>
+         </select>
+        </label>
+       </div>
+      </div>
+      <p class="muted stats-summary" id="stat-summary">
+      </p>
+      <div class="stats-list" id="stats-list">
+       <p class="muted">
+        Loading statistics…
+       </p>
+      </div>
+     </section>
+     <section class="panel blocking-panel" data-page="limits" id="limits-section">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Limits &amp; schedules
+        </h2>
+        <p class="muted">
+         Create a rule using schedule blocking, daily time-limit blocking, or both.
+        </p>
+       </div>
+      </div>
+      <form class="rule-form" id="rule-form">
+       <label class="field domain-field">
+        Website / URL patterns (one per line)
+        <textarea id="rule-domain" placeholder="reddit.com
+*.reddit.com" required="" rows="3"></textarea>
+        <small>
+         Supports wildcards and LeechBlock-style prefixes.
+        </small>
+       </label>
+       <div class="blocking-methods">
+        <fieldset class="method-card">
+         <legend>
+          <label class="method-title">
+           <input id="rule-schedule-enabled" type="checkbox"/>
+           Schedule blocking
+          </label>
+         </legend>
+         <p class="muted method-description">
+          Block only during selected times and days.
+         </p>
+         <div class="method-fields">
+          <label class="field">
+           Start time
+           <input id="rule-start" type="time" value="09:00"/>
+          </label>
+          <label class="field">
+           End time
+           <input id="rule-end" type="time" value="17:00"/>
+          </label>
+         </div>
+         <fieldset class="days-field">
+          <legend>
+           Days active
+          </legend>
+          <div class="days">
+           <label>
+            <input name="day" type="checkbox" value="0"/>
+            <span>
+             Sun
+            </span>
+           </label>
+           <label>
+            <input checked="" name="day" type="checkbox" value="1"/>
+            <span>
+             Mon
+            </span>
+           </label>
+           <label>
+            <input checked="" name="day" type="checkbox" value="2"/>
+            <span>
+             Tue
+            </span>
+           </label>
+           <label>
+            <input checked="" name="day" type="checkbox" value="3"/>
+            <span>
+             Wed
+            </span>
+           </label>
+           <label>
+            <input checked="" name="day" type="checkbox" value="4"/>
+            <span>
+             Thu
+            </span>
+           </label>
+           <label>
+            <input checked="" name="day" type="checkbox" value="5"/>
+            <span>
+             Fri
+            </span>
+           </label>
+           <label>
+            <input name="day" type="checkbox" value="6"/>
+            <span>
+             Sat
+            </span>
+           </label>
+          </div>
+         </fieldset>
+        </fieldset>
+        <fieldset class="method-card">
+         <legend>
+          <label class="method-title">
+           <input id="rule-limit-enabled" type="checkbox"/>
+           Daily time-limit blocking
+          </label>
+         </legend>
+         <p class="muted method-description">
+          Block after the tracked time reaches your daily limit.
+         </p>
+         <label class="field">
+          Daily limit (minutes)
+          <input id="rule-limit" max="1440" min="1" type="number" value="30"/>
+          <small>
+           For example, 30 means 30 minutes per day.
+          </small>
+         </label>
+        </fieldset>
+       </div>
+       <label class="checkline">
+        <input checked="" id="rule-enabled" type="checkbox"/>
+        Enable this rule
+       </label>
+       <label class="checkline advanced-regex">
+        <input id="rule-regex" type="checkbox"/>
+        Advanced: treat site patterns as regular expressions
+       </label>
+       <button class="button" type="submit">
+        + Add blocking rule
+       </button>
+      </form>
+      <div class="rule-note">
+       <strong>
+        Pattern tips:
+       </strong>
+       Use
+       <code>
+        *
+       </code>
+       to match within a URL path and
+       <code>
+        **
+       </code>
+       to match across URL separators; prefix a pattern with
+       <code>
+        +
+       </code>
+       to exempt matching URLs from that rule; prefix with
+       <code>
+        &gt;
+       </code>
+       to require a matching referrer; prefix with
+       <code>
+        ~
+       </code>
+       to match a keyword in the URL. Regex mode treats each line as a JavaScript regular expression. Whitelist patterns always take precedence over blocking rules.
+      </div>
+      <div class="rules-list" id="rules-list">
+      </div>
+     </section>
+     <section class="panel whitelist-panel" data-page="whitelist" id="whitelist-section">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Whitelist
+        </h2>
+        <p class="muted">
+         These websites are exempt from blocking rules.
+        </p>
+       </div>
+      </div>
+      <div class="whitelist-box">
+       <label class="field">
+        Whitelist patterns (one per line)
+        <textarea id="whitelist-patterns" placeholder="docs.example.com
+*.mybank.com" rows="5"></textarea>
+       </label>
+       <div class="whitelist-actions">
+        <small>
+         These websites are exempt from blocking rules. Wildcard patterns are supported.
+        </small>
+        <button class="button secondary" id="save-whitelist" type="button">
+         Save whitelist
+        </button>
+       </div>
+      </div>
+      <div class="whitelist-box tracking-exclusions">
+       <div>
+        <h3>
+         Activity and spent time for these websites will not be tracked
+        </h3>
+        <p class="muted">
+         Websites listed here will not contribute to usage totals, sessions, the pie chart, or the extension timer.
+        </p>
+       </div>
+       <label class="field">
+        Websites not to track (one per line)
+        <textarea id="tracking-excluded-patterns" placeholder="youtube.com
+*.youtube.com
+mail.example.com" rows="5"></textarea>
+       </label>
+       <div class="whitelist-actions">
+        <small>
+         This list is independent of the blocking whitelist above.
+        </small>
+        <button class="button secondary" id="save-tracking-exclusions" type="button">
+         Save tracking exclusions
+        </button>
+       </div>
+      </div>
+     </section>
+     <section class="panel settings-page" data-page="notifications" id="notifications-section">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Notifications
+        </h2>
+        <p class="muted">
+         Choose when Remove Internet Distraction should remind you about your browsing.
+        </p>
+       </div>
+      </div>
+      <div class="settings-item">
+       <label class="settings-check">
+        <input checked="" id="notification-daily-enabled" type="checkbox"/>
+        <span>
+         <strong>
+          Daily Summary Notifications
+         </strong>
+         <small>
+          At the end of each day, receive a notification with a summary of your daily usage.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="settings-item">
+       <label class="inline-setting">
+        <strong>
+         Notification time with summary information about your daily usage
+        </strong>
+        <input id="notification-daily-time" type="time" value="20:00"/>
+       </label>
+      </div>
+      <div class="settings-item">
+       <h3>
+        Notifications for websites
+       </h3>
+       <p class="muted">
+        Show notifications each time you spend a selected period of time on a website.
+       </p>
+       <form class="site-notification-form" id="site-notification-form">
+        <label class="field">
+         Website domain
+         <input id="notification-domain" placeholder="Enter website name…" required="" type="text"/>
+        </label>
+        <label class="field interval-field">
+         <span>
+          Remind every (HH:MM)
+         </span>
+         <input id="notification-interval" inputmode="numeric" pattern="[0-9]{1,3}:[0-5][0-9]" placeholder="00:30" required="" type="text" value="00:30"/>
+        </label>
+        <button class="button" type="submit">
+         Add website
+        </button>
+       </form>
+       <div class="site-notification-list" id="site-notification-list">
+       </div>
+      </div>
+      <div class="settings-item">
+       <h3>
+        Notification message
+       </h3>
+       <p class="muted">
+        This message appears in website time notifications.
+       </p>
+       <div class="notification-message-row">
+        <input id="notification-message" placeholder="Enter notification message…" type="text" value="You have spent a lot of time on this site"/>
+        <button class="button" id="save-notification-message" type="button">
+         Save
+        </button>
+       </div>
+      </div>
+      <p aria-live="polite" class="settings-status" id="notification-status" role="status">
+      </p>
+     </section>
+     <section class="panel settings-page" data-page="settings" id="settings-section">
+      <div class="panel-head">
+       <div>
+        <h2>
+         Settings
+        </h2>
+        <p class="muted">
+         Control tracking behavior, appearance, and your locally stored data.
+        </p>
+       </div>
+      </div>
+      <div class="settings-item">
+       <label class="settings-check">
+        <input checked="" id="setting-badge" type="checkbox"/>
+        <span>
+         <strong>
+          Display time tracker in icon
+         </strong>
+         <small>
+          Show the current website's spent time in short format on the extension icon.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="settings-item">
+       <label class="settings-check">
+        <input id="setting-defer" type="checkbox"/>
+        <span>
+         <strong>
+          Allow deferring block for 5 minutes
+         </strong>
+         <small>
+          After a website is blocked, postpone blocking for five minutes. Each website can be deferred once per day.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="settings-item">
+       <label class="settings-check">
+        <input id="setting-dark" type="checkbox"/>
+        <span>
+         <strong>
+          Dark theme
+         </strong>
+         <small>
+          Use the dark appearance for the Dashboard and extension popup.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="settings-item">
+       <label class="inline-setting">
+        <strong>
+         Stop the tracker if there is no action for
+        </strong>
+        <select id="setting-idle">
+         <option value="15">
+          15 seconds
+         </option>
+         <option value="30">
+          30 seconds
+         </option>
+         <option value="60">
+          60 seconds
+         </option>
+         <option value="120">
+          2 minutes
+         </option>
+         <option selected="" value="300">
+          5 minutes
+         </option>
+         <option value="custom">
+          Custom…
+         </option>
+         <option value="0">
+          Never (while browser is focused)
+         </option>
+        </select>
+        <input aria-label="Custom inactivity threshold in seconds" hidden="" id="setting-idle-custom" max="86400" min="1" step="1" type="number" value="45"/>
+       </label>
+       <p class="muted">
+        Mouse movement, scrolling, clicks, touch, and keyboard input reset the inactivity timer. The tracker pauses after this duration and resumes on the next action.
+       </p>
+      </div>
+      <div class="settings-item">
+       <h3>
+        Export web activity data to CSV
+       </h3>
+       <p class="muted">
+        Export website usage for a selected date range.
+       </p>
+       <div class="settings-actions">
+        <label class="field">
+         From
+         <input id="export-from" type="date"/>
+        </label>
+        <label class="field">
+         To
+         <input id="export-to" type="date"/>
+        </label>
+        <button class="button" id="export-csv" type="button">
+         Export to CSV
+        </button>
+       </div>
+      </div>
+      <div class="settings-item">
+       <h3>
+        Remove all data
+       </h3>
+       <p class="muted">
+        Delete all stored website time statistics and blocking activity. Your blocking rules and whitelist will remain.
+       </p>
+       <button class="button danger-button" id="remove-data" type="button">
+        Remove data
+       </button>
+      </div>
+      <div class="settings-item">
+       <h3>
+        Backup and restore
+       </h3>
+       <p class="muted">
+        Download a backup of your extension settings, rules, whitelist, and tracked statistics.
+       </p>
+       <div class="settings-actions">
+        <button class="button" id="backup-data" type="button">
+         Backup
+        </button>
+        <button class="button secondary" id="restore-data" type="button">
+         Restore
+        </button>
+        <input accept="application/json,.json" hidden="" id="restore-file" type="file"/>
+       </div>
+      </div>
+      <p aria-live="polite" class="settings-status" id="settings-status" role="status">
+      </p>
+     </section>
+    </main>
+   </div>
+  </div>
+  <script src="dashboard.js">
+  </script>
+ </body>
+</html>
+

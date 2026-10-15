@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f7faf8;
+  color: #17221b;
+  font: 15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+.blocked-card {
+  width: min(100%,560px);
+  padding: 36px;
+  border: 1px solid #dfe8e2;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 20px 70px #163c2410;
+  text-align: center;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+}
+
+.eyebrow {
+  margin: 18px 0 4px;
+  color: #167653;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.7px;
+}
+
+h1 {
+  font-size: 30px;
+  letter-spacing: -.8px;
+  margin: 0 0 8px;
+}
+
+.domain {
+  font-size: 16px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.reason {
+  color: #647168;
+  margin: 10px 0 24px;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.time-grid div {
+  padding: 16px 10px;
+  border-radius: 12px;
+  background: #f5f8f6;
+  border: 1px solid #e4ebe6;
+}
+
+.time-grid span {
+  display: block;
+  color: #68766d;
+  font-size: 12px;
+}
+
+.time-grid strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 11px 16px;
+  border: 1px solid #167653;
+  border-radius: 10px;
+  background: #167653;
+  color: #fff;
+  font: 700 13px inherit;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #fff;
+  color: #17221b;
+  border-color: #dfe8e2;
+}
+
+.hint {
+  font-size: 12px;
+  color: #77847b;
+  margin: 20px 0 0;
+}
+
+@media (prefers-color-scheme:dark) {
+  body {
+    background: #101914;
+    color: #f7fbf8;
+  }
+  .blocked-card {
+    background: #18251e;
+    border-color: #34483a;
+  }
+  .reason,.hint,.time-grid span {
+    color: #b6c8bb;
+  }
+  .time-grid div {
+    background: #22352a;
+    border-color: #34483a;
+  }
+  button.secondary {
+    background: #18251e;
+    color: #f7fbf8;
+    border-color: #34483a;
+  }
+}
+
+.actions button[hidden] {
+  display: none;
+}
+
+.actions {
+  flex-wrap: wrap;
+}

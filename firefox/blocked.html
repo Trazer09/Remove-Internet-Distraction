@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Website blocked — Remove Internet Distraction
+  </title>
+  <link href="blocked.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="blocked-card">
+   <img alt="Remove Internet Distraction" class="logo" src="icons/snowflake.svg"/>
+   <p class="eyebrow">
+    FOCUS MODE
+   </p>
+   <h1>
+    This website is blocked
+   </h1>
+   <p class="domain" id="blocked-domain">
+    Loading website…
+   </p>
+   <p class="reason" id="reason">
+    This website matches one of your blocking rules.
+   </p>
+   <div class="time-grid">
+    <div>
+     <span>
+      Time on this website today
+     </span>
+     <strong id="site-time">
+      —
+     </strong>
+    </div>
+    <div>
+     <span>
+      Total tracked today
+     </span>
+     <strong id="day-time">
+      —
+     </strong>
+    </div>
+   </div>
+   <div class="actions">
+    <button id="dashboard">
+     Open Dashboard
+    </button>
+    <button class="secondary" hidden="" id="defer">
+     Defer for 5 minutes
+    </button>
+    <button class="secondary" id="back">
+     Go back
+    </button>
+   </div>
+   <p class="hint">
+    If you think this is a mistake, review your schedule or daily limit in the Dashboard.
+   </p>
+  </main>
+  <script src="blocked.js">
+  </script>
+ </body>
+</html>
+

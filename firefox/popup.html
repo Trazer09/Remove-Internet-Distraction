@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Remove Internet Distraction
+  </title>
+  <link href="popup.css" rel="stylesheet"/>
+ </head>
+ <body data-theme="light">
+  <main class="app">
+   <header class="hero">
+    <img alt="" aria-hidden="true" class="brand-mark" src="icons/snowflake.svg"/>
+    <div class="brand-copy">
+     <h1>
+      Remove Internet Distraction
+     </h1>
+    </div>
+    <button aria-label="Open Dashboard" class="dashboard-button" id="dashboard-button" title="Open Dashboard" type="button">
+     ▦
+     <span>
+      Dashboard
+     </span>
+    </button>
+    <div class="settings-wrap">
+     <button aria-expanded="false" aria-label="Open settings" class="settings-button" id="settings-button" title="Settings" type="button">
+      ⚙
+     </button>
+     <div class="settings-menu" hidden="" id="settings-menu">
+      <button id="theme-toggle" type="button">
+       <span aria-hidden="true" id="theme-icon">
+        ☾
+       </span>
+       <span id="theme-label">
+        Dark mode
+       </span>
+      </button>
+      <button id="reload-tabs" type="button">
+       ↻
+       <span>
+        Refresh all open tabs
+       </span>
+      </button>
+      <button id="dashboard-settings" type="button">
+       ⚙
+       <span>
+        Settings
+       </span>
+      </button>
+     </div>
+    </div>
+   </header>
+   <div class="toolbar">
+    <span aria-live="polite" id="summary" role="status">
+     Loading settings…
+    </span>
+    <button id="expand-all" type="button">
+     Expand all
+    </button>
+   </div>
+   <section aria-label="Website and feature controls" class="site-list" id="site-list">
+   </section>
+   <section aria-labelledby="tracker-title" class="tracker-card" id="time-tracker">
+    <div class="tracker-header">
+     <div>
+      <h2 id="tracker-title">
+       Website Statistics
+      </h2>
+     </div>
+    </div>
+    <nav aria-label="Time report" class="tracker-tabs">
+     <button class="report-tab active" data-report="today" type="button">
+      Today
+     </button>
+     <button class="report-tab" data-report="total" type="button">
+      Total time
+     </button>
+     <button class="report-tab" data-report="daily" type="button">
+      Daily
+     </button>
+    </nav>
+    <div class="tracker-summary" id="tracker-summary">
+     <strong id="tracker-total">
+      0s
+     </strong>
+     <span id="tracker-summary-label">
+      Today
+     </span>
+    </div>
+    <div class="tracker-chart-area" id="tracker-chart-area">
+     <div aria-label="Website usage chart" class="tracker-donut" id="tracker-donut">
+      <div class="donut-hole">
+       <strong id="donut-total">
+        0s
+       </strong>
+       <span>
+        tracked
+       </span>
+      </div>
+     </div>
+     <div class="tracker-legend" id="tracker-legend">
+     </div>
+    </div>
+    <div class="tracker-list-header" id="tracker-list-header">
+     <span id="tracker-list-title">
+      Websites
+     </span>
+     <label>
+      Sort
+      <select aria-label="Sort websites" id="tracker-sort">
+       <option value="time">
+        Usage time
+       </option>
+       <option value="sessions">
+        Sessions
+       </option>
+       <option value="name">
+        Website name
+       </option>
+      </select>
+     </label>
+    </div>
+    <div aria-live="polite" class="tracker-sites" id="tracker-sites">
+     <p class="tracker-empty">
+      Waiting for website activity…
+     </p>
+    </div>
+    <div class="tracker-daily" hidden="" id="tracker-daily">
+    </div>
+    <div class="tracker-footer">
+     <span>
+      Time counts while the browser is focused and active.
+     </span>
+    </div>
+   </section>
+  </main>
+  <script src="features.js">
+  </script>
+  <script src="popup.js">
+  </script>
+ </body>
+</html>
+
