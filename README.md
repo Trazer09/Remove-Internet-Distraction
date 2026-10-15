@@ -1,7 +1,11 @@
 # Remove Internet Distraction
 
+<div align="center">
+  
+_**If you can't measure it, you can't improve it.**_
 
-  _**If you can't measure it, you can't improve it.**_
+</div>
+
 
 Remove Internet Distraction is a free, open-source productivity tool designed to help you reduce online distractions, track your browsing habits, and take control of your time.
 
