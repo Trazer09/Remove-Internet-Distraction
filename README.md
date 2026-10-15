@@ -1,4 +1,3 @@
-# Remove Internet Distraction
 
 <br>
 
