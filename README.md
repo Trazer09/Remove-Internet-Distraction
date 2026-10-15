@@ -1,5 +1,7 @@
 # Remove Internet Distraction
 
+"If you can't measure it, you can't improve it."
+
 Remove Internet Distraction is a free, open-source productivity tool designed to help you reduce online distractions, track your browsing habits, and take control of your time.
 
 You can customize YouTube, Instagram, and Reddit by hiding distracting elements, track the time you spend on websites, and create rules to block distracting websites when you need to focus.
@@ -16,4 +18,3 @@ Features include:
 - **Dashboard:** Manage website statistics, blocking rules, time limits, whitelist entries, and settings in one place.
 - **Privacy:** Website usage statistics and extension settings are stored locally in your browser. The extension does not send your tracking data to a remote analytics server.
 
-"If you can't measure it, you can't improve it."
