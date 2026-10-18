@@ -1,27 +1,38 @@
+ <div align="center">
 
-<br>
+# RID — Remove Internet Distraction
 
-<div align="center">
-  
-_**If you can't measure it, you can't improve it.**_
+_**Get RID of distractions.**_
 
 </div>
+
 <br>
 
+**[Install RID for Firefox](https://addons.mozilla.org/en-US/firefox/addon/remove-internet-distraction/)** 
 
-Remove Internet Distraction is a free, open-source productivity tool designed to help you reduce online distractions, track your browsing habits, and take control of your time.
+Remove Internet Distraction is a free, open-source browser extension designed to help you reduce online distractions, track your browsing habits, and manage your time online.
 
-You can customize YouTube, Instagram, and Reddit by hiding distracting elements, track the time you spend on websites, and create rules to block distracting websites when you need to focus.
+Customize YouTube, Instagram, and Reddit, track website usage, and block distracting websites when you need to focus.
 
-Features include:
+## Features
 
-- **Distraction filtering:** Hide YouTube Shorts, recommendations, and other distracting elements on YouTube, Instagram, and Reddit.
-- **Website time tracking:** Track time spent on websites and view your daily activity and most-used websites in a dashboard.
-- **Scheduled blocking:** Block websites during specific days and time periods.
-- **Daily time limits:** Restrict access to websites after reaching a specified usage limit.
+- **Distraction Filtering:** Hide YouTube Shorts, recommendations, and other distracting elements on YouTube, Instagram, and Reddit.
+- **Website Time Tracking:** Track time spent on websites, view daily activity, and identify your most-used websites.
+- **Scheduled Blocking:** Block websites on specific days and during selected time periods.
+- **Daily Time Limits:** Restrict access to websites after reaching a specified usage limit.
 - **Whitelist:** Exclude selected websites from blocking rules.
-- **Flexible rules:** Use domain patterns, wildcards, and supported URL-matching options to configure blocking rules.
-- **Custom controls:** Enable or disable individual filters and customize your browsing experience.
-- **Dashboard:** Manage website statistics, blocking rules, time limits, whitelist entries, and settings in one place.
-- **Privacy:** Website usage statistics and extension settings are stored locally in your browser. The extension does not send your tracking data to a remote analytics server.
+- **Flexible Rules:** Configure blocking rules using domain patterns, wildcards, and supported URL-matching options.
+- **Custom Controls:** Enable or disable individual filters to suit your preferences.
+- **Dashboard:** Manage activity statistics, blocking rules, time limits, whitelist entries, and settings in one place.
+- **Privacy:** Browsing statistics and extension settings are stored locally in your browser. Tracking data is not sent to a remote analytics server.
 
+## Feedback and Contributions
+
+Found a bug or have an idea for a new feature? Contributions and feedback are welcome!
+
+- **[Report a Bug or Request a Feature](https://github.com/Trazer09/Remove-Internet-Distraction/issues)**
+- **[View Source Code on GitHub](https://github.com/Trazer09/Remove-Internet-Distraction)**
+
+---
+
+**10 out of 10 doctors recommend starring this repo if you find it helpful :) ⭐**
