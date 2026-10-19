@@ -31,7 +31,7 @@ Customize YouTube, Instagram, and Reddit, track website usage, and block distrac
 Found a bug or have an idea for a new feature? Contributions and feedback are welcome!
 
 - **[Report a Bug or Request a Feature](https://github.com/Trazer09/Remove-Internet-Distraction/issues)**
-- **[View Source Code on GitHub](https://github.com/Trazer09/Remove-Internet-Distraction)**
+
 
 ---
 
