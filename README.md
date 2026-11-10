@@ -36,3 +36,9 @@ Found a bug or have an idea for a new feature? Contributions and feedback are we
 ---
 
 **10 out of 10 doctors recommend starring this repo if you find it helpful :) ⭐**
+
+
+Mozilla verification string:
+
+
+mozilla-site-verification=a1fb71ce243d18ff2cfe186e5dbfb221
